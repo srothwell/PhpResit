@@ -1,5 +1,28 @@
 <?php require('template/header.phtml') ?>
+<body>
+    <div>
+        <h3>Register Here</h3>
+        <form name="registerForm" method="post" action="register.php">
+            <label>Email: </label>
+            <input type="text" name="email">
+            <br/>
+            <label>Password: </label>
+            <input type="text" name="password">
+            <br/>
+            <label>Confirm Password: </label>
+            <input type="text" name="confirmPassword">
+            <br/>
+            <label>Address: </label>
+            <input type="text" name="address">
+            <br/>
+            <label>Phone Number: </label>
+            <input type="text" name="phone">
+            <br/>
+            <input type="submit" name="Submit" value-="Submit">
+            <input type="reset" name="Reset" value-="Reset">
+        </form>
+    </div>
+</body>
 
-<h3>Register Here</h3>
 
 <?php require('template/footer.phtml') ?>

@@ -23,8 +23,12 @@
       <column id="6" parent="2" name="phone">
         <data-type>varchar(45)</data-type>
       </column>
-      <key id="7" parent="2" name="PRIMARY">
-        <columns>email</columns>
+      <column id="7" parent="2" name="userID">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <key id="8" parent="2" name="PRIMARY">
+        <columns>userID</columns>
         <primary>1</primary>
       </key>
     </database-model>
