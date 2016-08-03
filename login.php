@@ -6,8 +6,8 @@ require_once('Models/Login.php');
 
 if (isset($_POST['Submit'])) {
 
-    $register = new Login();
-    $register->loginCheck($_POST['email'],$_POST['password']);
+    $loginCheck = new Login();
+    $loginCheck->loginCheck($_POST['email'],$_POST['password']);
 
 
 }
