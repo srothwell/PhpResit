@@ -64,9 +64,12 @@ class Database
             $query->execute(array(':email'=>$emailtocheck,':password'=>$passwordtocheck));
             if ($query->rowCount() === 0) {
                 echo('incorrect');
-                //return 0;
-            } else{
+                return 0;
+            } else {
+                $fetch = $query->fetch();
+                echo $fetch['email'];
                 echo('correct');
+                return $fetch['userID'];
 
             }
 
@@ -78,5 +81,19 @@ class Database
         }
 
     }
+
+    public function fetchAllCD()
+    {
+        try {
+            $db = new PDO('mysql:host=helios.csesalford.com;dbname=stb242', 'stb242', 'jgw0Mqrj');
+
+            $get = $db->query('SELECT * FROM CDs');
+            return $get->fetchAll();
+        } catch (PDOException $e) {
+            var_dump($e);
+        }
+
+    }
+
 }
 ?>

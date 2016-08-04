@@ -51,7 +51,13 @@
       <column id="15" parent="3" name="price">
         <data-type>varchar(45)</data-type>
       </column>
-      <key id="16" parent="3" name="PRIMARY">
+      <column id="16" parent="3" name="image">
+        <data-type>varchar(45)</data-type>
+      </column>
+      <column id="17" parent="3" name="status">
+        <data-type>tinyint(1)</data-type>
+      </column>
+      <key id="18" parent="3" name="PRIMARY">
         <columns>CDid</columns>
         <primary>1</primary>
       </key>
