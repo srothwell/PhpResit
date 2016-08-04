@@ -10,10 +10,10 @@ if (isset($_POST['Submit'])) {
     if ($loginCheck->loginCheck($_POST['email'],$_POST['password']) > 0) {
         $userID = $loginCheck->loginCheck($_POST['email'],$_POST['password']);
         echo "WORKED";
-        echo $userID;
-        $SESSION['userID'] = $userID;
-        $testsession = $_SESSION['userID'];
-        echo $testsession;
+        //echo $userID;
+        $_SESSION['userID'] = $userID;
+        echo $_SESSION['userID'];
+
     } else {
         echo "login failed";
     }

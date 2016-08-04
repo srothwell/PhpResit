@@ -67,7 +67,7 @@ class Database
                 return 0;
             } else {
                 $fetch = $query->fetch();
-                echo $fetch['email'];
+                //echo $fetch['email'];
                 echo('correct');
                 return $fetch['userID'];
 
