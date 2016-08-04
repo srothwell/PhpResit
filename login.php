@@ -2,11 +2,11 @@
 
 $view = new stdClass();
 $view->pageTitle = 'Log In';
-require_once('Models/Login.php');
+require_once('Models/Databse.php');
 
 if (isset($_POST['Submit'])) {
 
-    $loginCheck = new Login();
+    $loginCheck = new Database();
     $loginCheck->loginCheck($_POST['email'],$_POST['password']);
 
 
