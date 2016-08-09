@@ -10,6 +10,7 @@
             <th>Genre</th>
             <th>Price</th>
             <th>Status</th>
+            <th>CDID</th>
         </tr>
         <?php foreach ($view->CDs as $CD) { ?>
 
@@ -21,6 +22,9 @@
                 <td><?php echo $CD['genre']; ?></td>
                 <td><?php echo $CD['price']; ?></td>
                 <td><?php if ($CD['status'] == 0) echo 'Available'; else echo 'Rented'; ?></td>
+                <td><?php echo $CD['CDid']; ?></td>
+
+                <td> <input type="button" onclick=""> </td>
             </tr>
 
         <?php } ?>
