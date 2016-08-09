@@ -24,7 +24,7 @@
                 <td><?php if ($CD['status'] == 0) echo 'Available'; else echo 'Rented'; ?></td>
                 <td><?php echo $CD['CDid']; ?></td>
 
-                <td> <input type="button" onclick=""> </td>
+                <td><a href="selectedCD.phtml?id=<?php echo $CD['CDid']; ?>" class="button">Imanoob</a></td>
             </tr>
 
         <?php } ?>

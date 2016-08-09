@@ -6,27 +6,29 @@
       <identifier-quote-string>`</identifier-quote-string>
     </database-info>
     <case-sensitivity plain-identifiers="exact" quoted-identifiers="exact"/>
-    <database-model serializer="dbm" rdbms="MYSQL" format-version="2.4">
-      <schema id="1" name="stb242"/>
+    <database-model serializer="dbm" rdbms="MYSQL" format-version="2.6">
+      <schema id="1" name="stb242">
+        <visible>1</visible>
+      </schema>
       <table id="2" parent="1" name="users"/>
       <table id="3" parent="1" name="CDs"/>
       <column id="4" parent="2" name="email">
         <mandatory>1</mandatory>
-        <data-type>varchar(100)</data-type>
+        <data-type>varchar(100)|0</data-type>
       </column>
       <column id="5" parent="2" name="password">
         <mandatory>1</mandatory>
-        <data-type>varchar(45)</data-type>
+        <data-type>varchar(45)|0</data-type>
       </column>
       <column id="6" parent="2" name="address">
-        <data-type>varchar(45)</data-type>
+        <data-type>varchar(45)|0</data-type>
       </column>
       <column id="7" parent="2" name="phone">
-        <data-type>varchar(45)</data-type>
+        <data-type>varchar(45)|0</data-type>
       </column>
       <column id="8" parent="2" name="userID">
         <mandatory>1</mandatory>
-        <data-type>int(11)</data-type>
+        <data-type>int(11)|0</data-type>
       </column>
       <key id="9" parent="2" name="PRIMARY">
         <columns>userID</columns>
@@ -34,28 +36,28 @@
       </key>
       <column id="10" parent="3" name="CDid">
         <mandatory>1</mandatory>
-        <data-type>int(11)</data-type>
+        <data-type>int(11)|0</data-type>
       </column>
       <column id="11" parent="3" name="title">
-        <data-type>varchar(45)</data-type>
+        <data-type>varchar(45)|0</data-type>
       </column>
       <column id="12" parent="3" name="artist">
-        <data-type>varchar(45)</data-type>
+        <data-type>varchar(45)|0</data-type>
       </column>
       <column id="13" parent="3" name="release">
-        <data-type>varchar(45)</data-type>
+        <data-type>varchar(45)|0</data-type>
       </column>
       <column id="14" parent="3" name="genre">
-        <data-type>varchar(45)</data-type>
+        <data-type>varchar(45)|0</data-type>
       </column>
       <column id="15" parent="3" name="price">
-        <data-type>varchar(45)</data-type>
+        <data-type>varchar(45)|0</data-type>
       </column>
       <column id="16" parent="3" name="image">
-        <data-type>varchar(45)</data-type>
+        <data-type>varchar(45)|0</data-type>
       </column>
       <column id="17" parent="3" name="status">
-        <data-type>tinyint(1)</data-type>
+        <data-type>tinyint(1)|0</data-type>
       </column>
       <key id="18" parent="3" name="PRIMARY">
         <columns>CDid</columns>
