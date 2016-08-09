@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -33,9 +34,15 @@
         <div id="menu" class="col-xs-6 col-sm-3 col-md-2">
         <ul class="nav navbar_default nav-stacked">
             <li><a href="index.php">Home</a></li>
-            <li><a href="login.php">Log In</a></li>
-            <li><a href="register.php">Register</a></li>
             <li><a href="allCDs.php">All Cds</a></li>
+            <li><a href="searchCD.php">Search CD</a></li>
+            <?php if (isset($_SESSION['userID'])) { ?>
+                <li><a href="logout.php">Logout</a></li>
+                <li><?php echo ($_SESSION['userID']) ?></li>
+            <?php } else {?>
+                <li><a href="login.php">Log In</a></li>
+                <li><a href="register.php">Register</a></li>
+            <?php } ?>
 
         </ul>
        </div>

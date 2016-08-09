@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once('Models/Database.php');
 $view = new stdClass();
 $view->pageTitle = 'All CDs';

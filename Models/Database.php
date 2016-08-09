@@ -95,5 +95,35 @@ class Database
 
     }
 
+    public function fetchSelectedCD($id)
+    {
+        try {
+            $db = new PDO('mysql:host=helios.csesalford.com;dbname=stb242', 'stb242', 'jgw0Mqrj');
+
+            $get = $db->prepare('SELECT * FROM CDs WHERE CDid = :id');
+            $get->execute(array(':id'=>$id));
+            return $get->fetchAll();
+
+        } catch (PDOException $e) {
+            var_dump($e);
+        }
+
+    }
+
+    public function searchCD($search)
+    {
+        try {
+            $db = new PDO('mysql:host=helios.csesalford.com;dbname=stb242', 'stb242', 'jgw0Mqrj');
+
+            $get = $db->prepare('SELECT * FROM CDs WHERE title LIKE :name');
+            $get->execute(array(':name'=>$search));
+            return $get->fetchAll();
+
+        } catch (PDOException $e) {
+            var_dump($e);
+        }
+
+    }
+
 }
 ?>
