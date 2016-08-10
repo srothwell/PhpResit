@@ -12,6 +12,7 @@ if (isset($_POST['Submit'])) {
         echo "WORKED";
         //echo $userID;
         $_SESSION['userID'] = $userID;
+        $_SESSION['email'] = $_POST['email'];
         echo $_SESSION['userID'];
 
     } else {

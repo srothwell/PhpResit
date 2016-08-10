@@ -100,13 +100,43 @@ class Database
 
     }
 
-    public function searchCD($search)
+    public function searchTitle($search)
     {
         try {
             $db = new PDO('mysql:host=helios.csesalford.com;dbname=stb242', 'stb242', 'jgw0Mqrj');
 
             $get = $db->prepare('SELECT * FROM CDs WHERE title LIKE :name');
             $get->execute(array(':name'=>$search));
+            return $get->fetchAll();
+
+        } catch (PDOException $e) {
+            var_dump($e);
+        }
+
+    }
+
+    public function searchArtist($search)
+    {
+        try {
+            $db = new PDO('mysql:host=helios.csesalford.com;dbname=stb242', 'stb242', 'jgw0Mqrj');
+
+            $get = $db->prepare('SELECT * FROM CDs WHERE artist LIKE :artist');
+            $get->execute(array(':artist'=>$search));
+            return $get->fetchAll();
+
+        } catch (PDOException $e) {
+            var_dump($e);
+        }
+
+    }
+
+    public function searchGenre($search)
+    {
+        try {
+            $db = new PDO('mysql:host=helios.csesalford.com;dbname=stb242', 'stb242', 'jgw0Mqrj');
+
+            $get = $db->prepare('SELECT * FROM CDs WHERE genre LIKE :genre');
+            $get->execute(array(':genre'=>$search));
             return $get->fetchAll();
 
         } catch (PDOException $e) {

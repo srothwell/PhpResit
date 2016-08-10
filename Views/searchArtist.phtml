@@ -1,6 +1,13 @@
 <?php require ('template/header.phtml') ?>
 
-    <h1>All CD's</h1>
+    <h1>Search Artist</h1>
+    <form name="searchForm" method="post" action="searchArtist.php">
+        <label>Search </label>
+        <br/>
+        <input type="submit" name="Submit" value="Submit">
+        <input type="text" name="searchInput">
+    </form>
+    <?php if(isset($view->CDs)){ ?>
     <table style="100%">
         <tr>
             <th></th>
@@ -24,13 +31,13 @@
                 <td><?php if ($CD['status'] == 0) echo 'Available'; else echo 'Rented'; ?></td>
                 <td><?php echo $CD['CDid']; ?></td>
                 <?php if (isset($_SESSION['userID'])) { ?>
-                <td><a href="selectedCD.php?id=<?php echo $CD['CDid']; ?>" class="button">View</a></td>
+                    <td><a href="selectedCD.php?id=<?php echo $CD['CDid']; ?>" class="button">Rent</a></td>
                 <?php } else {?>
-                <td> please log in to rent</td>
+                    <td> please log in to rent</td>
                 <?php } ?>
             </tr>
-
-        <?php } ?>
+        <?php }
+    } ?>
 
     </table>
 
