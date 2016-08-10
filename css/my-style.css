@@ -1,24 +1,24 @@
 #title {
     margin-top: 12px;
     background-color: #fff;
-    color: #000;
+    color: #111111;
 
 }
 #menu {
-    border-top: solid 6px #f00;
-    background-color: #f00;
+    border-top: solid 6px #001f3f;
+    background-color: #001f3f;
     color: #fff;
     height: 400px;
 }
 
 #menu a {
-    background-color: #f00;
+    background-color: #001f3f;
     color: #fff;
     text-decoration: none;
     display: block;
 }
 #menu a:hover {
-    background-color: #f00;
+    background-color: #001f3f;
     color: #ddd;
     text-decoration:underline;
     display: block;
@@ -26,14 +26,14 @@
 
 #content {
     background-color: #fff;
-    border-top: solid 6px #f00;
+    border-top: solid 6px #001f3f;
 
 }
 
 #footer {
     margin_top: 20px;
     text-align: center;
-    background-color: #000;
+    background-color: #111111;
     color: #fff;
 }
 
