@@ -1,0 +1,36 @@
+<?php require ('template/header.phtml') ?>
+<h1>Basket</h1>
+<table style="100%">
+    <tr>
+        <th></th>
+        <th>CD Title</th>
+        <th>Artist</th>
+        <th>Release Date</th>
+        <th>Genre</th>
+        <th>Price</th>
+        <th>Status</th>
+        <th>CD ID</th>
+
+    </tr>
+    <?php foreach ($view->CDs as $metaCD) { ?>
+        <?php foreach ($metaCD as $CD) { ?>
+            <tr>
+                <td><img src="images/<?php echo $CD['image']; ?>" alt="Cover" style="width:140px;height:180px;"></td>
+                <td><?php echo $CD['title']; ?></td>
+                <td><?php echo $CD['artist']; ?></td>
+                <td><?php echo $CD['release']; ?></td>
+                <td><?php echo $CD['genre']; ?></td>
+                <td><?php echo $CD['price']; ?></td>
+                <td><?php if ($CD['status'] == 0) echo 'Available'; else echo 'Rented'; ?></td>
+                <td><?php echo $CD['CDid']; ?></td>
+            </tr>
+        <?php } ?>
+    <?php } ?>
+
+</table>
+
+<h3>Confirm Rent</h3>
+<input type="submit" name="Submit" value-="Submit">
+
+
+<?php require('template/footer.phtml') ?>
