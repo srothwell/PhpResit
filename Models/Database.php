@@ -52,14 +52,8 @@ class Database
 
         $emailtocheck = $email;
         $passwordtocheck = $password;
-
-
-
         try {
-
             $db = new PDO('mysql:host=helios.csesalford.com;dbname=stb242', 'stb242', 'jgw0Mqrj');
-
-
             $query = $db->prepare('SELECT * FROM users WHERE(email = :email AND password = :password)');
             $query->execute(array(':email'=>$emailtocheck,':password'=>$passwordtocheck));
             if ($query->rowCount() === 0) {
@@ -70,14 +64,10 @@ class Database
                 //echo $fetch['email'];
                 echo('correct');
                 return $fetch['userID'];
-
             }
-
-
-
-
         } catch (PDOException $e) {
             var_dump($e);
+            return 0;
         }
 
     }
