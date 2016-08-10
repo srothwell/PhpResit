@@ -1,38 +1,42 @@
 <?php require ('template/header.phtml') ?>
-
-    <h1>All CD's</h1>
-    <table style="100%">
-        <tr>
-            <th></th>
-            <th>CD Title</th>
-            <th>Artist</th>
-            <th>Release Date</th>
-            <th>Genre</th>
-            <th>Price</th>
-            <th>Status</th>
-            <th>CDID</th>
-        </tr>
-        <?php foreach ($view->CDs as $CD) { ?>
-
-            <tr>
-                <td><img src="images/<?php echo $CD['image']; ?>" alt="Cover" style="width:140px;height:180px;"></td>
-                <td><?php echo $CD['title']; ?></td>
-                <td><?php echo $CD['artist']; ?></td>
-                <td><?php echo $CD['release']; ?></td>
-                <td><?php echo $CD['genre']; ?></td>
-                <td><?php echo $CD['price']; ?></td>
-                <td><?php if ($CD['status'] == 0) echo 'Available'; else echo 'Rented'; ?></td>
-                <td><?php echo $CD['CDid']; ?></td>
-                <?php if (isset($_SESSION['userID'])) { ?>
-                <td><a href="selectedCD.php?id=<?php echo $CD['CDid']; ?>" class="button">View</a></td>
-                <?php } else {?>
-                <td> please log in to rent</td>
+    <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+            <h1>All CD's</h1>
+        </div>
+    </div>
+    <hr/>
+    <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+            <table class="table table-responsive">
+                <tr>
+                    <th></th>
+                    <th>CD Title</th>
+                    <th>Artist</th>
+                    <th>Release Date</th>
+                    <th>Genre</th>
+                    <th>Price</th>
+                    <th>Status</th>
+                    <th>CDID</th>
+                    <th></th>
+                </tr>
+                <?php foreach ($view->CDs as $CD) { ?>
+                    <tr>
+                        <td><img src="images/<?php echo $CD['image']; ?>" alt="Cover"></td>
+                        <td><?php echo $CD['title']; ?></td>
+                        <td><?php echo $CD['artist']; ?></td>
+                        <td><?php echo $CD['release']; ?></td>
+                        <td><?php echo $CD['genre']; ?></td>
+                        <td><?php echo $CD['price']; ?></td>
+                        <td><?php if ($CD['status'] == 0) echo 'Available'; else echo 'Rented'; ?></td>
+                        <td><?php echo $CD['CDid']; ?></td>
+                        <?php if (isset($_SESSION['userID'])) { ?>
+                            <td><a href="selectedCD.php?id=<?php echo $CD['CDid']; ?>" class="button">View</a></td>
+                        <?php } else {?>
+                            <td> please log in to rent</td>
+                        <?php } ?>
+                    </tr>
                 <?php } ?>
-            </tr>
-
-        <?php } ?>
-
-    </table>
-
-
+            </table>
+        </div>
+    </div>
 <?php require ('template/footer.phtml')?>
