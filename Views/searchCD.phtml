@@ -7,6 +7,7 @@
         <input type="submit" name="Submit" value="Submit">
         <input type="text" name="searchInput">
     </form>
+    <?php if(isset($view->CDs)){ ?>
     <table style="100%">
         <tr>
             <th></th>
@@ -35,8 +36,8 @@
                     <td> please log in to rent</td>
                 <?php } ?>
             </tr>
-
-        <?php } ?>
+        <?php }
+    } ?>
 
     </table>
 
